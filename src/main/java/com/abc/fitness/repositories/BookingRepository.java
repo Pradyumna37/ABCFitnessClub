@@ -43,7 +43,6 @@ public class BookingRepository {
                            !b.getParticipationDate().isAfter(endDate))
                 .collect(Collectors.toList());
     }
-
     public int countBookingsForClassAndDate(FitnessClass fitnessClass, LocalDate date) {
         return (int) bookings.stream()
                 .filter(b -> b.getFitnessClass().getName().equals(fitnessClass.getName()) && 
