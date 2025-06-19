@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "8a6b3b5b-b58c-4030-83b8-98525d2dbbca",
+		"name": "ABCFitness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45488166",
+		"_collection_link": "https://pradyumnarao-1261919.postman.co/workspace/PRADYUMNA-RAO's-Workspace~84831dfd-67c6-4c69-83dc-eee90f1e0ea8/collection/45488166-8a6b3b5b-b58c-4030-83b8-98525d2dbbca?action=share&source=collection_link&creator=45488166"
+	},
+	"item": [
+		{
+			"name": "PilatesClassCreation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pilates\",\r\n    \"startDate\": \"2025-12-01\",\r\n    \"endDate\": \"2025-12-20\",\r\n    \"startTime\": \"10:00\",\r\n    \"durationMinutes\": 60,\r\n    \"capacity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GymClassCreation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gym\",\r\n    \"startDate\": \"2025-06-01\",\r\n    \"endDate\": \"2025-06-20\",\r\n    \"startTime\": \"11:00\",\r\n    \"durationMinutes\": 60,\r\n    \"capacity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InvalidClassCapacity",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"GymInvalidCapacity\",\r\n    \"startDate\": \"2025-06-01\",\r\n    \"endDate\": \"2025-06-20\",\r\n    \"startTime\": \"11:00\",\r\n    \"durationMinutes\": 60,\r\n    \"capacity\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InvalidClassEndDate Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"GymInvalidEndDate\",\r\n    \"startDate\": \"2025-06-01\",\r\n    \"endDate\": \"2025-05-20\",\r\n    \"startTime\": \"11:00\",\r\n    \"durationMinutes\": 60,\r\n    \"capacity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookingPilates",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"PilatesCustomer1\",\r\n    \"fitnessClass\": {\r\n        \"name\": \"Pilates\",\r\n        \"startDate\": \"2025-12-01\",\r\n        \"endDate\": \"2025-12-31\",\r\n        \"startTime\": \"10:00\",\r\n        \"durationMinutes\": 60,\r\n        \"capacity\": 10\r\n    },\r\n    \"participationDate\": \"2025-12-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookingGymCustomer1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"GymCustomer1\",\r\n    \"fitnessClass\": {\r\n        \"name\": \"Gym\",\r\n    \"startDate\": \"2025-06-01\",\r\n    \"endDate\": \"2025-06-20\",\r\n    \"startTime\": \"11:00\",\r\n    \"durationMinutes\": 60,\r\n    \"capacity\": 2\r\n    },\r\n    \"participationDate\": \"2025-06-09\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookingGymCustomer2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"Customer2\",\r\n    \"fitnessClass\": {\r\n        \"name\": \"Gym\",\r\n        \"startDate\": \"2025-06-01\",\r\n        \"endDate\": \"2025-06-20\",\r\n        \"startTime\": \"11:00\",\r\n        \"durationMinutes\": 60,\r\n        \"capacity\": 2\r\n    },\r\n    \"participationDate\": \"2025-06-09\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookingGymMoreThanCapacityInvalid",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"Customer2\",\r\n    \"fitnessClass\": {\r\n        \"name\": \"Gym\",\r\n        \"startDate\": \"2025-06-01\",\r\n        \"endDate\": \"2025-06-20\",\r\n        \"startTime\": \"11:00\",\r\n        \"durationMinutes\": 60,\r\n        \"capacity\": 2\r\n    },\r\n    \"participationDate\": \"2025-06-09\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookingPilatesCustomer2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"PilatesCustomer1\",\r\n    \"fitnessClass\": {\r\n        \"name\": \"Pilates\",\r\n        \"startDate\": \"2025-12-01\",\r\n        \"endDate\": \"2025-12-31\",\r\n        \"startTime\": \"10:00\",\r\n        \"durationMinutes\": 60,\r\n        \"capacity\": 10\r\n    },\r\n    \"participationDate\": \"2025-12-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookingPilatesustomerWithInvalidParticipationDate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberName\": \"PilatesCustomer1\",\r\n    \"fitnessClass\": {\r\n        \"name\": \"Pilates\",\r\n        \"startDate\": \"2025-12-01\",\r\n        \"endDate\": \"2025-12-31\",\r\n        \"startTime\": \"10:00\",\r\n        \"durationMinutes\": 60,\r\n        \"capacity\": 10\r\n    },\r\n    \"participationDate\": \"2025-12-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchBookingByName",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/search?memberName=PilatesCustomer1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"search"
+					],
+					"query": [
+						{
+							"key": "memberName",
+							"value": "PilatesCustomer1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchBookingByDateRange",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/search?memberName=PilatesCustomer1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"search"
+					],
+					"query": [
+						{
+							"key": "memberName",
+							"value": "PilatesCustomer1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByBookingNameAndDateRange",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/search?memberName=PilatesCustomer1&startDate=2025-12-01&endDate=2025-12-20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"search"
+					],
+					"query": [
+						{
+							"key": "memberName",
+							"value": "PilatesCustomer1"
+						},
+						{
+							"key": "startDate",
+							"value": "2025-12-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-12-20"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
